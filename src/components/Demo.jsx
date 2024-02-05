@@ -4,7 +4,7 @@ import { useLazyGetSummaryQuery } from "../services/article";
 
 const Demo = () => {
   const [allArticles, setAllArticles] = useState([]);
-  const [copied, setCopied] = useState('')
+  const [copied, setCopied] = useState("");
   const [article, setArticle] = useState({
     url: "",
     summary: "",
@@ -38,11 +38,11 @@ const Demo = () => {
   const handlecopy = (copyUrl) => {
     setCopied(copyUrl);
     navigator.clipboard.writeText(copyUrl);
-    setTimeout(() => setCopied(''), 5000);
-  }
+    setTimeout(() => setCopied(""), 5000);
+  };
 
   return (
-    <section className="mt-16 w-full-max-w-xl">
+    <section className="mt-16 w-full max-w-xl">
       {/* search */}
       <div className="flex flex-col w-full gap-2">
         <form
@@ -80,8 +80,7 @@ const Demo = () => {
               onClick={() => setArticle(item)}
               className="link_card"
             >
-              <div className="copy_btn"
-              onClick={() => handlecopy(item.url)}>
+              <div className="copy_btn" onClick={() => handlecopy(item.url)}>
                 <img
                   alt="copy_icon"
                   src={copied === item.url ? tick : copy}
